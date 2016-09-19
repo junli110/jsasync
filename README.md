@@ -1,11 +1,11 @@
-# jasync
+# jsasync
 http call parallel return in order
 <pre>
 <code>
 var a=["url1","url2","url4"]
 
 
-jasync.parallel(a,function(url1,cb){
+jsasync.parallel(a,function(url1,cb){
 	setTimeout(function(){
 		cb("111")
 	},3000)
