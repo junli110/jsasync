@@ -28,7 +28,7 @@ var jasync={
 	}
 }
 
-
+ 
 
 var a=["url1","url2","url4"]
 
