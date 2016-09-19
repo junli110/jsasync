@@ -1,4 +1,4 @@
-var jasync={
+var jsasync={
 	parallel:function(urls){
 		var fns=Array.prototype.slice.call(arguments, 1);
 		var callBack=null;
@@ -15,7 +15,13 @@ var jasync={
 						res.forEach(function(r){
 							arr.push(r.data);
 						})
-						callBack(arr);
+						if(callBack){
+							callBack(arr);
+						}else{
+							setTimeout(function(){
+								callBack(arr);
+							},0);
+						}
 					}
 				})
 			})()
@@ -28,12 +34,12 @@ var jasync={
 	}
 }
 
- 
+
 
 var a=["url1","url2","url4"]
 
 
-jasync.parallel(a,function(url1,cb){
+jsasync.parallel(a,function(url1,cb){
 	setTimeout(function(){
 		cb("111")
 	},3000)
